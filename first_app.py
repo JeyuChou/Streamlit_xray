@@ -38,6 +38,6 @@ expanded = tf.expand_dims(img_array,0)
 prediction = xray_model.predict(expanded)
 score = tf.math.sigmoid(prediction)
 classes = ['NORMAL','PNEUMONIA']
-txt = "this image most likely belongs to " + str(classes[np.argmax(score)] + " lung with a " + str(np.max(score)*100 + " percent confidence")
+txt = "this image most likely belongs to " + str(classes[np.argmax(score)] + " lung with a " + str(np.max(score)*100 + " percent confidence"
 st.text(txt)
 
