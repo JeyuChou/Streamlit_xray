@@ -10,7 +10,7 @@ from tensorflow.python.keras.preprocessing.image import ImageDataGenerator,load_
 import matplotlib.pyplot as plt
 
 
-model = load_model('xray_model.h5')
+xray_model = load_model('xray_model.h5')
 
 st.title('xray classification app')
 
@@ -31,7 +31,9 @@ img = tf.keras.preprocessing.image.load_img(path,color_mode='grayscale',target_s
 
 plt.title('Xray Image passed in')
 plt.imshow(img)
+plt.show()
 
+img_array = img_to_array(img)
 img_array = img_array/255.
 expanded = tf.expand_dims(img_array,0)
 
